@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts-en.common.js"></script>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 1024px;height:700px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: ['3.24', '3.25', '3.26', '3.27', '3.28', '3.29', '3.30', '3.31']
+                // , '4.1','4.2','4.3','4.4','4.5','4.6','4.7','4.8','4.9','4.10','4.11','4.12'
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: [1860.4, 1492.2, 862, 3167.5, 1990.2, 1531, 632, 1061.1],
+                // ,912,1488,1412.2,1472.2,2519.3,1940.3,1934.2,1975.2,679,1508.3,426,2529.8
+                type: 'bar',
+                smooth: true
+            }],
+            tooltip: {
+                trigger: 'item'
+            }
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts-en.common.js"></script>
+</body>
+
+</html>
